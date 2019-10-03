@@ -54,6 +54,17 @@ describe("templates", function(){
         done()
       })
     })
+
+    it("should render table", function(done){
+      poly.render("table.md", function(error, body){
+        should.not.exist(error)
+        body.should.include("<h2>Hello Table</h2>")
+        body.should.include("<table>")
+        body.should.include("<thead>")
+        body.should.include("<tbody>")
+        done()
+      })
+    })
   })
 
   describe(".jade", function(){
